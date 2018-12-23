@@ -391,7 +391,7 @@ class SelectedPhoto extends StatelessWidget {
 
   SelectedPhoto({this.numberOfDots, this.photoIndex});
 
-  Widget _inactivePhoto() {
+  Widget _inactivePhoto(photIndex) {
     return new Container(
       child: Padding(
         padding: EdgeInsets.only(left: 0.0, right: 8.0),
@@ -402,6 +402,9 @@ class SelectedPhoto extends StatelessWidget {
                 color: Colors.grey, borderRadius: BorderRadius.circular(4.0))),
       ),
     );
+
+
+
   }
 
   Widget _activePhoto(photoIndex) {
@@ -417,7 +420,8 @@ class SelectedPhoto extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey, spreadRadius: 0.0, blurRadius: 2.0)
+                        color: Colors.yellowAccent, spreadRadius: 1.5, blurRadius: 2.0),
+
                   ])
           ),
         ),
@@ -436,7 +440,7 @@ class SelectedPhoto extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey, spreadRadius: 0.0, blurRadius: 2.0)
+                        color: Colors.cyan, spreadRadius: 1.5, blurRadius: 2.0)
                   ])
           ),
         ),
@@ -456,7 +460,7 @@ class SelectedPhoto extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey, spreadRadius: 0.0, blurRadius: 2.0)
+                        color: Colors.deepPurpleAccent, spreadRadius:1.5, blurRadius: 2.0)
                   ])
           ),
         ),
@@ -480,7 +484,7 @@ class SelectedPhoto extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey, spreadRadius: 0.0, blurRadius: 2.0)
+                        color: Colors.pink, spreadRadius: 1.5, blurRadius: 2.0)
                   ])
           ),
         ),
@@ -492,7 +496,7 @@ class SelectedPhoto extends StatelessWidget {
     List<Widget> dots = [];
 
     for (int i = 0; i < numberOfDots; ++i) {
-      dots.add(i == photoIndex ? _activePhoto(photoIndex) : _inactivePhoto());
+      dots.add(i == photoIndex ? _activePhoto(photoIndex) : _inactivePhoto(photoIndex));
       dots.add(Container(margin: EdgeInsets.only(right: 10.0 , left: 10.0),));
     }
 
